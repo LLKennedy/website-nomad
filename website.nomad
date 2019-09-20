@@ -2,13 +2,13 @@ job "website" {
 datacenters = ["dc1"]
 
 	group "example" {
-		task "server" {
-			driver = "exec"
+		task "batch" {
+			driver = "raw_exec"
 
 			config {
-				command = "echo"
+				command = "cmd"
 				args = [
-					"hello",
+					"mkdir", "stuff",
 				]
 			}
 
